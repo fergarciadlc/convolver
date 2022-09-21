@@ -24,9 +24,10 @@ public:
 
     void process (juce::AudioBuffer<float>& inBuffer);
 
+    bool isBypassed { false };
+    
 private:
     juce::dsp::Convolution conv;
     juce::File irFile;
-    bool isBypassed { false };
-
+    
 };
