@@ -18,12 +18,15 @@ public:
     Convolution();
     ~Convolution();
 
-    void prepare(double inSampleRate, int inSamplesPerBlock, int inNumChannels);
+    void prepare (juce::dsp::ProcessSpec spec);
+    
+    void updateIR (juce::String irFilePath);
 
-    void process(juce::AudioBuffer<float> inBuffer, bool isBypassed);
+    void process (juce::AudioBuffer<float>& inBuffer);
 
 private:
     juce::dsp::Convolution conv;
-    juce::File IRFile;
+    juce::File irFile;
+    bool isBypassed { false };
 
 };
