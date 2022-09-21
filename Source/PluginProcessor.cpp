@@ -136,7 +136,12 @@ bool ConvolverAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts
 void ConvolverAudioProcessor::updateParameters()
 {
     juce::String irFilePath = juce::String("/Users/fernando/Documents/Library/Media/ImpulseResponses/KalthallenCabsIR/Kalthallen IRs/001a-SM57-V30-4x12.wav");
+    float inGainValue = 1.0f;
+    float outGainValue = 1.0f;
+    
     convolution.updateIR(irFilePath);
+    inputGain.updateGain(inGainValue);
+    outputGain.updateGain(outGainValue);
 }
 
 void ConvolverAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
@@ -146,7 +151,9 @@ void ConvolverAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
 //    auto totalNumOutputChannels = getTotalNumOutputChannels();
 
     updateParameters();
+    inputGain.process(buffer);
     convolution.process(buffer);
+    outputGain.process(buffer);
 }
 
 //==============================================================================

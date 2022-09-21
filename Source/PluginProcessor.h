@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "DSP/Convolution.h"
+#include "DSP/Gain.h"
 
 //==============================================================================
 /**
@@ -62,6 +63,8 @@ public:
     
 private:
     Convolution convolution;
+    Gain inputGain;
+    Gain outputGain;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConvolverAudioProcessor)
 };
