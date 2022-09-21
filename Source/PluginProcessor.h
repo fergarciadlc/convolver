@@ -59,6 +59,9 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
     // ==
+    juce::AudioProcessorValueTreeState apvts;
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameters();
+
     void updateParameters();
     
 private:

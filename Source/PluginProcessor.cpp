@@ -19,13 +19,22 @@ ConvolverAudioProcessor::ConvolverAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ), apvts (*this, nullptr, "Parameters", createParameters())
 #endif
 {
 }
 
 ConvolverAudioProcessor::~ConvolverAudioProcessor()
 {
+}
+
+juce::AudioProcessorValueTreeState::ParameterLayout ConvolverAudioProcessor::createParameters()
+{
+    juce::AudioProcessorValueTreeState::ParameterLayout params;
+    params.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID("input", 1), "input", 0.0f, 2.0f, 1.0f));
+    params.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID("output", 1), "output", 0.0f, 2.0f, 1.0f));
+    
+    return params;
 }
 
 //==============================================================================
@@ -136,8 +145,8 @@ bool ConvolverAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts
 void ConvolverAudioProcessor::updateParameters()
 {
     juce::String irFilePath = juce::String("/Users/fernando/Documents/Library/Media/ImpulseResponses/KalthallenCabsIR/Kalthallen IRs/001a-SM57-V30-4x12.wav");
-    float inGainValue = 1.0f;
-    float outGainValue = 1.0f;
+    float inGainValue = apvts.getRawParameterValue("input") -> load();
+    float outGainValue = apvts.getRawParameterValue("output") -> load();
     
     convolution.updateIR(irFilePath);
     inputGain.updateGain(inGainValue);
@@ -147,8 +156,6 @@ void ConvolverAudioProcessor::updateParameters()
 void ConvolverAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
-//    auto totalNumInputChannels  = getTotalNumInputChannels();
-//    auto totalNumOutputChannels = getTotalNumOutputChannels();
 
     updateParameters();
     inputGain.process(buffer);
