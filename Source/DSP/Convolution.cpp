@@ -20,7 +20,7 @@ void Convolution::prepare (juce::dsp::ProcessSpec spec)
     conv.prepare(spec);
 }
 
-void Convolution::updateIR (juce::String irFilePath)
+void Convolution::setIR (juce::String irFilePath)
 {
     irFile = juce::File(irFilePath);
     if (! irFile.existsAsFile())
@@ -39,6 +39,10 @@ void Convolution::updateIR (juce::String irFilePath)
 
 }
 
+void Convolution::setBypass(bool bypass)
+{
+    isBypassed = bypass;
+}
 
 void Convolution::process (juce::AudioBuffer<float>& inBuffer)
 {

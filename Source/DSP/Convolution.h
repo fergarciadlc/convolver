@@ -20,14 +20,16 @@ public:
 
     void prepare (juce::dsp::ProcessSpec spec);
     
-    void updateIR (juce::String irFilePath);
+    void setIR (juce::String irFilePath);
+    
+    void setBypass (bool bypass);
 
     void process (juce::AudioBuffer<float>& inBuffer);
 
-    bool isBypassed { false };
     
 private:
     juce::dsp::Convolution conv;
     juce::File irFile;
+    bool isBypassed { false };
     
 };
