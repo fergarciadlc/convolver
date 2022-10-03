@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="V6whvu" name="Convolver" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="fergarciadlc">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="fergarciadlc"
+              defines="JUCE_MODAL_LOOPS_PERMITTED=1">
   <MAINGROUP id="IC0gip" name="Convolver">
+    <GROUP id="{DD7B144B-84F2-10A1-758E-449BE4156F25}" name="GUI">
+      <FILE id="oh4GEj" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/GUI/MainComponent.cpp"/>
+      <FILE id="cefooZ" name="MainComponent.h" compile="0" resource="0" file="Source/GUI/MainComponent.h"/>
+    </GROUP>
     <GROUP id="{2AA2EBE5-78AC-2DBE-6885-04DE5C0147EC}" name="DSP">
       <FILE id="wra5Rr" name="Convolution.cpp" compile="1" resource="0" file="Source/DSP/Convolution.cpp"/>
       <FILE id="rt0U5G" name="Convolution.h" compile="0" resource="0" file="Source/DSP/Convolution.h"/>

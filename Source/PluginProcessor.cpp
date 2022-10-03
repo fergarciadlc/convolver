@@ -145,7 +145,8 @@ bool ConvolverAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts
 
 void ConvolverAudioProcessor::updateParameters()
 {
-    juce::String irFilePath = juce::String ("/Users/fernando/Documents/Library/Media/ImpulseResponses/KalthallenCabsIR/Kalthallen IRs/001a-SM57-V30-4x12.wav");
+    juce::String irFilePath = juce::String
+    ("/Users/fernando/Documents/Impulse Responses/KalthallenCabsIR/Kalthallen IRs/001a-SM57-V30-4x12.wav");
     float inGainValue = apvts.getRawParameterValue ("input") -> load();
     float outGainValue = apvts.getRawParameterValue ("output") -> load();
     
@@ -173,8 +174,8 @@ bool ConvolverAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* ConvolverAudioProcessor::createEditor()
 {
-//    return new ConvolverAudioProcessorEditor (*this);
-    return new juce::GenericAudioProcessorEditor (*this);
+    return new ConvolverAudioProcessorEditor (*this);
+//    return new juce::GenericAudioProcessorEditor (*this);
 }
 
 //==============================================================================
