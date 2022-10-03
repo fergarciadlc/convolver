@@ -5,6 +5,12 @@
               defines="JUCE_MODAL_LOOPS_PERMITTED=1">
   <MAINGROUP id="IC0gip" name="Convolver">
     <GROUP id="{DD7B144B-84F2-10A1-758E-449BE4156F25}" name="GUI">
+      <GROUP id="{AA858DBF-5F77-65E1-F0CC-7745953B3F55}" name="Controls">
+        <FILE id="jHGFxB" name="ControlsComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/Controls/ControlsComponent.cpp"/>
+        <FILE id="bht355" name="ControlsComponent.h" compile="0" resource="0"
+              file="Source/GUI/Controls/ControlsComponent.h"/>
+      </GROUP>
       <FILE id="oh4GEj" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/GUI/MainComponent.cpp"/>
       <FILE id="cefooZ" name="MainComponent.h" compile="0" resource="0" file="Source/GUI/MainComponent.h"/>

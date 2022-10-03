@@ -33,6 +33,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout ConvolverAudioProcessor::cre
     juce::AudioProcessorValueTreeState::ParameterLayout params;
     params.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID("input", 1), "input", 0.0f, 2.0f, 1.0f));
     params.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID("output", 1), "output", 0.0f, 2.0f, 1.0f));
+    params.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID("mix", 1), "mix", 0.0f, 1.0f, 1.0f));
     params.add(std::make_unique<juce::AudioParameterBool>(juce::ParameterID("bypass", 1), "bypass", false));
     
     return params;
