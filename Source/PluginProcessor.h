@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "Helpers/Parameters.h"
 #include "DSP/Convolution.h"
 #include "DSP/Gain.h"
 

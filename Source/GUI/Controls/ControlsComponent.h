@@ -10,6 +10,7 @@
 
 #pragma once
 #include <JuceHeader.h>
+#include "../../Helpers/Parameters.h"
 #include "../../PluginProcessor.h"
 
 class ControlsComponent : public juce::Component

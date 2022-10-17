@@ -31,9 +31,9 @@ void ControlsComponent::createSliderWithAttachment (juce::Slider& sliderObj,
 
 ControlsComponent::ControlsComponent (ConvolverAudioProcessor& p) : audioProcessor (p)
 {
-    createSliderWithAttachment (inputSlider, inputAttach, "input", inputLabel, "Input");
-    createSliderWithAttachment (outputSlider, outputAttach, "output", outputLabel, "Output");
-    createSliderWithAttachment (mixSlider, mixAttach, "mix", mixLabel, "Mix");
+    createSliderWithAttachment (inputSlider, inputAttach, INPUT_PARAM, inputLabel, INPUT_PARAM);
+    createSliderWithAttachment (outputSlider, outputAttach, OUTPUT_PARAM, outputLabel, OUTPUT_PARAM);
+    createSliderWithAttachment (mixSlider, mixAttach, MIX_PARAM, mixLabel, MIX_PARAM);
 }
 
 ControlsComponent::~ControlsComponent() {}

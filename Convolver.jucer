@@ -4,6 +4,9 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="fergarciadlc"
               defines="JUCE_MODAL_LOOPS_PERMITTED=1">
   <MAINGROUP id="IC0gip" name="Convolver">
+    <GROUP id="{68F412E3-0AB4-27F8-1721-D3C0974270E2}" name="Helpers">
+      <FILE id="Xr5Gd7" name="Parameters.h" compile="0" resource="0" file="Source/Helpers/Parameters.h"/>
+    </GROUP>
     <GROUP id="{DD7B144B-84F2-10A1-758E-449BE4156F25}" name="GUI">
       <GROUP id="{AA858DBF-5F77-65E1-F0CC-7745953B3F55}" name="Controls">
         <FILE id="jHGFxB" name="ControlsComponent.cpp" compile="1" resource="0"
